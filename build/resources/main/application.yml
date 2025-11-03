@@ -12,7 +12,7 @@ server:
 spring:
     datasource:
         driver-class-name: org.postgresql.Driver
-        url: jdbc:postgresql://15.164.166.177:5432/app?serverTimezone=Asia/Seoul
+        url: jdbc:postgresql://${EC2_DATABASE_HOST}:5432/app?serverTimezone=Asia/Seoul
         username: spring
         password: 1234
     session:
@@ -21,7 +21,7 @@ spring:
             flush-mode: immediate
     data:
         redis:
-            host: 15.164.166.177
+            host: ${EC2_DATABASE_HOST}
             port: 6379
         cache:
         type: redis
@@ -49,11 +49,11 @@ mybatis:
 
 # openssl rand -base64 32
 jwt:
-  secret: L7mfi3lYseNQHXzBnRmzgvWIk5Jpv5Kc3cdf9bwfz3c=
+  secret: ${JWT_SECRET}
 
 aws:
-    access-key: AKIAXNIHHB6EAHLSJ3V4
-    secret-key: 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
+    access-key: ${AWS_ACCESS_KEY_ID}
+    secret-key: ${AWS_SECRET_ACCESS_KEY}
     s3:
-        bucket-name: jey-bucket0904
-    region: ap-northeast-2
+        bucket-name: ${AWS_S3_BUCKET}
+    region: ${AWS_REGION}
