@@ -14,7 +14,7 @@ spring:
         driver-class-name: org.postgresql.Driver
         url: jdbc:postgresql://${EC2_DATABASE_HOST}:5432/app?serverTimezone=Asia/Seoul
         username: spring
-        password: ${DATABASE_PASSWORD}
+        password: 1234
     session:
         redis:
             repository-type: indexed
@@ -32,7 +32,7 @@ spring:
         host: smtp.gmail.com
         port: 587
         username: wjddmsdb03@gmail.com
-        password: ${MAIL_PASSWORD}
+        password: jacu jlyg vhri jcnh
         properties:
             mail:
                 smtp:
